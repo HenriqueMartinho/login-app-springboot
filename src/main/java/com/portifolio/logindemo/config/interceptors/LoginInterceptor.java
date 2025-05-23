@@ -16,7 +16,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
 		
-		if(CookieUtil.getCookie(request, "userId") != null) {
+		if(CookieUtil.getCookie(request, "UserId") != null) {
 			return true;
 		}
 		

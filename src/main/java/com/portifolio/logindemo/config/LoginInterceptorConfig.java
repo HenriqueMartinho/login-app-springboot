@@ -18,7 +18,8 @@ public class LoginInterceptorConfig implements WebMvcConfigurer {
 		registry.addInterceptor(loginInterceptor).excludePathPatterns(
 				"/login",
 				"/signup",
-				"/error");
+				"/error",
+				"/css/style.css");
 	}
 
 }

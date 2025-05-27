@@ -36,7 +36,7 @@ Este é um projeto simples de sistema de autenticação desenvolvido com **Sprin
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seuusuario/login-springboot.git
+git clone https://github.com/HenriqueMartinho/login-app-springboot.git
 ```
 2. Configure o application.properties com suas credenciais MySQL:
 ````bash

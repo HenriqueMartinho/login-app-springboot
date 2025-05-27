@@ -19,7 +19,9 @@ public class LoginInterceptorConfig implements WebMvcConfigurer {
 				"/login",
 				"/signup",
 				"/error",
-				"/css/style.css");
+				"/css/style.css",
+				"/users",
+				"/users/*");
 	}
 
 }

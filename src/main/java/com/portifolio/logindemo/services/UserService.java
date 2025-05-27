@@ -31,6 +31,10 @@ public class UserService {
 		return userRepository.findByEmailAndPassword(user.getEmail(), user.getPassword());
 	}
 	
+	public void insert(User user) {
+		userRepository.save(user);
+	}
+	
 	public User update(Long id, User newData) {
 		User user = userRepository.findById(id)
 				.orElseThrow(() -> new RuntimeException("Usuário não encontrado"));

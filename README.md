@@ -26,8 +26,8 @@ Este é um projeto simples de sistema de autenticação desenvolvido com **Sprin
 
 - 👤 Cadastro de novo usuário
 - 🔐 Login com redirecionamento
-- 🏠 Página Home genérica após login
 - 💾 Dados persistidos em banco MySQL
+- 📫 Estrutura básica de controllers REST
 - 🚀 Cache aplicado na página Home para maior performance
 
 ---
@@ -63,7 +63,7 @@ http://localhost:8080/login
 Sinta-se à vontade para contribuir com melhorias ou sugerir novas funcionalidades! ✨
 
 ## 📌 Contato
-Feito com 💙 por Henrique Martinho
+Feito por Henrique Martinho\
 🔗 [LinkedIn](https://www.linkedin.com/in/henrique-martinho/) | 📧 henrique.martinho@outlook.com
 
 

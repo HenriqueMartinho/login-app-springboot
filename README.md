@@ -12,7 +12,7 @@ Este é um projeto simples de sistema de autenticação desenvolvido com **Sprin
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Java 17**
+- **Java 21**
 - **Spring Boot**
 - **Spring Web**
 - **Spring Data JPA**
@@ -26,7 +26,8 @@ Este é um projeto simples de sistema de autenticação desenvolvido com **Sprin
 
 - 👤 Cadastro de novo usuário
 - 🔐 Login com redirecionamento
-- 💾 Dados persistidos em banco MySQL
+- 🔩 Arquitetura MVC (Model-View-Controller)
+- 💾 Dados persistidos em MySQL
 - 📫 Estrutura básica de controllers REST
 - 🚀 Cache aplicado na página Home para maior performance
 
@@ -38,11 +39,12 @@ Este é um projeto simples de sistema de autenticação desenvolvido com **Sprin
 ```bash
 git clone https://github.com/HenriqueMartinho/login-app-springboot.git
 ```
-2. Configure o application.properties com suas credenciais MySQL:
+2. Configure o application.yml com suas credenciais MySQL:
 ````bash
-spring.datasource.url=jdbc:mysql://localhost:3306/seubanco
-spring.datasource.username=root
-spring.datasource.password=suasenha
+  datasource:
+    url: jdbc:mysql://localhost:3306/seu_banco
+    username: seuuser
+    password: suasenha
 ````
 3. Rode a aplicação:
 ````bash

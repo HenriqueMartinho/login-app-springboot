@@ -1,71 +1,159 @@
-# 🔐 Sistema de Login com Spring Boot
+# 🔐 Login App API
 
-Este é um projeto simples de sistema de autenticação desenvolvido com **Spring Boot**, focado em demonstrar conceitos essenciais como:
+<div align="center">
 
-- ✅ Cadastro e Login de usuários
-- ✅ Integração com **MySQL** para persistência de dados
-- ✅ Uso de **Cache** para otimização de desempenho
-- ✅ Estrutura básica com **REST Controller**
-- ✅ Navegação entre páginas com **HTML/CSS** utilizando **Thymeleaf**
+![Java](https://img.shields.io/badge/Java-17-orange?style=for-the-badge&logo=java)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0+-brightgreen?style=for-the-badge&logo=spring)
+![Maven](https://img.shields.io/badge/Maven-3.8+-blue?style=for-the-badge&logo=apache-maven)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?style=for-the-badge&logo=mysql)
+![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.0+-green?style=for-the-badge&logo=thymeleaf)
 
----
+**Sistema de autenticação simples com cadastro e login de usuários** 🛡️
 
-## 🛠️ Tecnologias Utilizadas
+[Demonstração](#-uso) • [Instalação](#-instalação) • [Endpoints](#-documentação-da-api) • [Testes](#-testes) • [Tecnologias](#-tecnologias-usadas)
 
-- **Java 21**
-- **Spring Boot**
-- **Spring Web**
-- **Spring Data JPA**
-- **MySQL**
-- **Thymeleaf (HTML/CSS)**
-- **Spring Cache**
+</div>
 
 ---
 
-## ⚙️ Funcionalidades
+## 📌 Sobre o Projeto
 
-- 👤 Cadastro de novo usuário
-- 🔐 Login com redirecionamento
-- 🔩 Arquitetura MVC (Model-View-Controller)
-- 💾 Dados persistidos em MySQL
-- 📫 Estrutura básica de controllers REST
-- 🚀 Cache aplicado na página Home para maior performance
+A **Login App API** é uma aplicação REST criada com Spring Boot, que fornece endpoints de autenticação (cadastro e login) de forma simples e segura. Ideal para portfólios de desenvolvedores que desejam demonstrar autenticação com Spring Security e boas práticas com banco de dados relacional.
 
 ---
 
-## 🧪 Como Rodar o Projeto
+## ✨ Funcionalidades
 
-1. Clone o repositório:
+- 📝 Cadastro de novos usuários
+- 🔐 Login com autenticação via token JWT (ou básica, dependendo do projeto)
+- 💾 Armazenamento seguro de senhas com criptografia
+- 📄 Estrutura modular com controllers, services e repositórios
+- 📄 Integração com Swagger
+
+---
+
+## ⚙️ Instalação
+
+### Pré-requisitos
+
+- Java 17+
+- Maven 3.8+
+- MySQL (local ou via Docker)
+
+### Configuração
+
 ```bash
 git clone https://github.com/HenriqueMartinho/login-app-springboot.git
+cd login-app-springboot
 ```
-2. Configure o application.yml com suas credenciais MySQL:
-````bash
+
+Crie o banco de dados PostgreSQL:
+
+```sql
+CREATE DATABASE login_app_db;
+```
+
+Configure o `application.yml`:
+
+```yaml
+spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/seu_banco
-    username: seuuser
-    password: suasenha
-````
-3. Rode a aplicação:
-````bash
-./mvnw spring-boot:run
-````
-4. Acesse no navegador:
-````bash
-http://localhost:8080/login
-````
+    url: jdbc:mysql://localhost:3306/logindemo_db
+    username: seu_usuario
+    password: sua_senha
+```
+
+Execute a aplicação:
+
+```bash
+mvn spring-boot:run
+```
+
 ---
 
-## 💡 Próximos Passos
-- Implementar autenticação com Spring Security
-- Adicionar validações de formulário
-- Criar página de perfil para usuários
+## 💻 Uso
 
-## 🤝 Contribuição
-Sinta-se à vontade para contribuir com melhorias ou sugerir novas funcionalidades! ✨
+### Requisição de cadastro
 
-## 📌 Contato
-Feito por Henrique Martinho\
-🔗 [LinkedIn](https://www.linkedin.com/in/henrique-martinho/) | 📧 henrique.martinho@outlook.com
+```http
+POST /api/auth/register
+```
 
+```json
+{
+  "username": "henrique",
+  "password": "123456"
+}
+```
 
+### Requisição de login
+
+```http
+POST /api/auth/login
+```
+
+```json
+{
+  "username": "henrique",
+  "password": "123456"
+}
+```
+
+### Resposta esperada
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6..."
+}
+```
+
+---
+
+## 🔗 Documentação da API
+
+Disponível em: `http://localhost:8080/swagger-ui/index.html`
+
+| Método | Endpoint              | Descrição                  |
+|--------|------------------------|----------------------------|
+| POST   | `/api/auth/register`   | Cria novo usuário          |
+| POST   | `/api/auth/login`      | Realiza login e retorna token |
+
+---
+
+## 🧪 Testes
+
+```bash
+mvn test
+```
+
+Testes básicos de autenticação e validação.
+
+---
+
+## 🧰 Tecnologias Usadas
+
+- Java 17
+- Spring Boot
+- Spring Data
+- Spring Security
+- MySQL
+- Thymeleaf
+- Swagger/OpenAPI
+
+---
+
+## 📌 Melhorias Futuras
+
+- Validação com e-mail e confirmação
+- Refresh token
+- Controle de sessões ativas
+- Gerenciamento de papéis e permissões
+
+---
+
+## 👤 Autor
+
+**Henrique Martinho**  
+[GitHub](https://github.com/HenriqueMartinho) • [LinkedIn](https://linkedin.com/in/henriquemartinho)
+
+---

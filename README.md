@@ -18,17 +18,19 @@
 
 ## 📌 Sobre o Projeto
 
-A **Login App API** é uma aplicação REST criada com Spring Boot, que fornece endpoints de autenticação (cadastro e login) de forma simples e segura. Ideal para portfólios de desenvolvedores que desejam demonstrar autenticação com Spring Security e boas práticas com banco de dados relacional.
+**Login App** é uma aplicação criada com Spring Boot, focado em demonstrar conceitos essenciais de forma simples e segura. 
 
 ---
 
 ## ✨ Funcionalidades
 
 - 📝 Cadastro de novos usuários
-- 🔐 Login com autenticação via token JWT (ou básica, dependendo do projeto)
+- 🔐 Login com autenticação via token JWT
 - 💾 Armazenamento seguro de senhas com criptografia
-- 📄 Estrutura modular com controllers, services e repositórios
-- 📄 Integração com Swagger
+- 🔩 Arquitetura MVC (Model-View-Controller)
+- 💾 Dados persistidos em banco MySQL
+- 📫 Estrutura modular de controllers REST
+- 🚀 Cache aplicado na página Home para maior performance
 
 ---
 
@@ -36,7 +38,7 @@ A **Login App API** é uma aplicação REST criada com Spring Boot, que fornece 
 
 ### Pré-requisitos
 
-- Java 17+
+- Java 21+
 - Maven 3.8+
 - MySQL (local ou via Docker)
 
@@ -50,7 +52,7 @@ cd login-app-springboot
 Crie o banco de dados PostgreSQL:
 
 ```sql
-CREATE DATABASE login_app_db;
+CREATE DATABASE loginapp_db;
 ```
 
 Configure o `application.yml`:
@@ -58,7 +60,7 @@ Configure o `application.yml`:
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/logindemo_db
+    url: jdbc:mysql://localhost:3306/loginapp_db
     username: seu_usuario
     password: sua_senha
 ```
@@ -69,73 +71,13 @@ Execute a aplicação:
 mvn spring-boot:run
 ```
 
----
-
-## 💻 Uso
-
-### Requisição de cadastro
-
-```http
-POST /api/auth/register
-```
-
-```json
-{
-  "username": "henrique",
-  "password": "123456"
-}
-```
-
-### Requisição de login
-
-```http
-POST /api/auth/login
-```
-
-```json
-{
-  "username": "henrique",
-  "password": "123456"
-}
-```
-
-### Resposta esperada
-
-```json
-{
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6..."
-}
-```
-
----
-
-## 🔗 Documentação da API
-
-Disponível em: `http://localhost:8080/swagger-ui/index.html`
-
-| Método | Endpoint              | Descrição                  |
-|--------|------------------------|----------------------------|
-| POST   | `/api/auth/register`   | Cria novo usuário          |
-| POST   | `/api/auth/login`      | Realiza login e retorna token |
-
----
-
-## 🧪 Testes
-
-```bash
-mvn test
-```
-
-Testes básicos de autenticação e validação.
-
----
-
 ## 🧰 Tecnologias Usadas
 
-- Java 17
+- Java 21
 - Spring Boot
 - Spring Data
 - Spring Security
+- Spring Web
 - MySQL
 - Thymeleaf
 - Swagger/OpenAPI

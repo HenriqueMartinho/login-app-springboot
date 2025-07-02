@@ -8,7 +8,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?style=for-the-badge&logo=mysql)
 ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.0+-green?style=for-the-badge&logo=thymeleaf)
 
-**Sistema de autenticação simples com cadastro e login de usuários** 🛡️
+**Sistema de autenticação com cadastro e login de usuários** 🛡️
 
 [Demonstração](#-uso) • [Instalação](#-instalação) • [Endpoints](#-documentação-da-api) • [Testes](#-testes) • [Tecnologias](#-tecnologias-usadas)
 
